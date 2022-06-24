@@ -27,26 +27,62 @@ impl MigrationTrait for Migration {
                     .col(ColumnDef::new(BlockStats::Height).big_integer().not_null())
                     .col(ColumnDef::new(BlockStats::AvgFee).double().not_null())
                     .col(ColumnDef::new(BlockStats::AvgFeeRate).double().not_null())
-                    .col(ColumnDef::new(BlockStats::AvgTxSize).big_integer().not_null())
+                    .col(
+                        ColumnDef::new(BlockStats::AvgTxSize)
+                            .big_integer()
+                            .not_null(),
+                    )
                     .col(ColumnDef::new(BlockStats::Ins).big_integer().not_null())
                     .col(ColumnDef::new(BlockStats::MaxFee).double().not_null())
                     .col(ColumnDef::new(BlockStats::MaxFeeRate).double().not_null())
-                    .col(ColumnDef::new(BlockStats::MaxTxSize).big_integer().not_null())
+                    .col(
+                        ColumnDef::new(BlockStats::MaxTxSize)
+                            .big_integer()
+                            .not_null(),
+                    )
                     .col(ColumnDef::new(BlockStats::MedianFee).double().not_null())
-                    .col(ColumnDef::new(BlockStats::MedianTime).big_integer().not_null())
-                    .col(ColumnDef::new(BlockStats::MedianTxSize).big_integer().not_null())
+                    .col(
+                        ColumnDef::new(BlockStats::MedianTime)
+                            .big_integer()
+                            .not_null(),
+                    )
+                    .col(
+                        ColumnDef::new(BlockStats::MedianTxSize)
+                            .big_integer()
+                            .not_null(),
+                    )
                     .col(ColumnDef::new(BlockStats::Outs).big_integer().not_null())
                     .col(ColumnDef::new(BlockStats::Subsidy).double().not_null())
-                    .col(ColumnDef::new(BlockStats::SwTotalSize).big_integer().not_null())
-                    .col(ColumnDef::new(BlockStats::SwTotalWeight).big_integer().not_null())
+                    .col(
+                        ColumnDef::new(BlockStats::SwTotalSize)
+                            .big_integer()
+                            .not_null(),
+                    )
+                    .col(
+                        ColumnDef::new(BlockStats::SwTotalWeight)
+                            .big_integer()
+                            .not_null(),
+                    )
                     .col(ColumnDef::new(BlockStats::SwTxs).big_integer().not_null())
                     .col(ColumnDef::new(BlockStats::Time).big_integer().not_null())
                     .col(ColumnDef::new(BlockStats::TotalOut).double().not_null())
-                    .col(ColumnDef::new(BlockStats::TotalSize).big_integer().not_null())
-                    .col(ColumnDef::new(BlockStats::TotalWeight).big_integer().not_null())
+                    .col(
+                        ColumnDef::new(BlockStats::TotalSize)
+                            .big_integer()
+                            .not_null(),
+                    )
+                    .col(
+                        ColumnDef::new(BlockStats::TotalWeight)
+                            .big_integer()
+                            .not_null(),
+                    )
                     .col(ColumnDef::new(BlockStats::TotalFee).double().not_null())
                     .col(ColumnDef::new(BlockStats::Txs).big_integer().not_null())
-                    .col(ColumnDef::new(BlockStats::UtxoIncrease).integer().not_null())
+                    .col(
+                        ColumnDef::new(BlockStats::UtxoIncrease)
+                            .integer()
+                            .not_null(),
+                    )
                     .col(ColumnDef::new(BlockStats::UtxoSizeInc).integer().not_null())
                     .to_owned(),
             )

@@ -1,0 +1,92 @@
+{% extends "layout.html.tera" %} {% block content %}
+<div class="container">
+  <p><!--Nothing to see here --></p>
+  <h1>Block Stats</h1>
+  {% if flash %}
+  <small class="field-{{ flash.kind }}-flash">
+    {{ flash.message }}
+  </small>
+  {% endif %}
+  <table>
+    <tbody>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>BlockHash</th>
+          <th>Height</th>
+          <th>AverageFee</th>
+          <th>AvgFeeRate</th>
+          <th>AvgTxSize</th>
+          <th>Ins</th>
+          <th>MaxFee</th>
+          <th>MaxFeeRate</th>
+          <th>MaxTxSize</th>
+          <th>MedianFee</th>
+          <th>MedianTime</th>
+          <th>MedianTxSize</th>
+          <th>Outs</th>
+          <th>Subsidy</th>
+          <th>SwTotalSize</th>
+          <th>SwTotalWeight</th>
+          <th>SwTxs</th>
+          <th>Time</th>
+          <th>TotalOut</th>
+          <th>TotalSize</th>
+          <th>TotalWeight</th>
+          <th>TotalFee</th>
+          <th>Txs</th>
+          <th>UtxoIncrease</th>
+          <th>UtxoSizeInc</th>
+        </tr>
+      </thead>
+      {% for post in posts %}
+      <tr class="post" >
+        <td>{{ post.id }}</td>
+        <td>{{ post.block_hash }}</td>
+        <td>{{ post.height }}</td>
+        <td>{{ post.avg_fee }}</td>
+        <td>{{ post.avg_fee_rate }}</td>
+        <td>{{ post.avg_tx_size }}</td>
+        <td>{{ post.ins }}</td>
+        <td>{{ post.max_fee }}</td>
+        <td>{{ post.max_fee_rate }}</td>
+        <td>{{ post.max_tx_size }}</td>
+        <td>{{ post.median_fee }}</td>
+        <td>{{ post.median_time }}</td>
+        <td>{{ post.median_tx_size }}</td>
+        <td>{{ post.outs }}</td>
+        <td>{{ post.subsidy }}</td>
+        <td>{{ post.sw_total_size }}</td>
+        <td>{{ post.sw_total_weight }}</td>
+        <td>{{ post.sw_txs }}</td>
+        <td>{{ post.time }}</td>
+        <td>{{ post.total_out }}</td>
+        <td>{{ post.total_size }}</td>
+        <td>{{ post.total_weight }}</td>
+        <td>{{ post.total_fee }}</td>
+        <td>{{ post.txs }}</td>
+        <td>{{ post.utxo_increase }}</td>
+        <td>{{ post.utxo_size_inc }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+    <tfoot>
+      <tr>
+        <td></td>
+        <td>
+          {% if page == 1 %} Previous {% else %}
+          <a href="/v1/?page={{ page - 1 }}&posts_per_page={{ posts_per_page }}"
+            >Previous</a
+          >
+          {% endif %} | {% if page == num_pages %} Next {% else %}
+          <a href="/v1/?page={{ page + 1 }}&posts_per_page={{ posts_per_page }}"
+            >Next</a
+          >
+          {% endif %}
+        </td>
+        <td></td>
+      </tr>
+    </tfoot>
+  </table>
+</div>
+{% endblock content %}
